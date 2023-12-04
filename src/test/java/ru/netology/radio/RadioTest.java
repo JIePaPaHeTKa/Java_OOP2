@@ -17,7 +17,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetRadioStationAboveMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(15);
         radio.setCurrentNumber(9);
         radio.nextNumber();
         int expected = 0;
@@ -39,7 +39,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetRadioStationBelowMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(15);
         radio.setCurrentNumber(0);
         radio.prevNumber();
         int expected = 9;
@@ -71,8 +71,8 @@ public class RadioTest {
 
     @Test
     public void shouldNumberBelowMin() {
-        Radio radio = new Radio();
-        radio.setCurrentNumber(-1);
+        Radio radio = new Radio(15);
+        radio.setCurrentNumber(0);
         radio.prevNumber();
         int expected = 9;
         int actual = radio.getCurrentNumber();
