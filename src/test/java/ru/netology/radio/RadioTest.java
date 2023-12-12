@@ -140,14 +140,23 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldReductionVolumeBelowMin() {
+        public void shouldReductionVolumeBelowMin() {
+            Radio radio = new Radio();
+            radio.setCurrentVolume(-1);
+
+            radio.reductionVolume();
+
+            int expected = 0;
+            int actual = radio.getCurrentVolume();
+
+            Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldPassHomeWork() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(-1);
-
-        radio.reductionVolume();
-
-        int expected = 0;
-        int actual = radio.getCurrentVolume();
+        radio.setCurrentNumber(15);
+        int expected = 15;
+        int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
     }
