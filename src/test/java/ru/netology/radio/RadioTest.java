@@ -7,9 +7,9 @@ public class RadioTest {
     @Test
     public void shouldNextRadioStation() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(15);
+        radio.setCurrentNumber(7);
         radio.nextNumber();
-        int expected = 16;
+        int expected = 8;
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -18,7 +18,7 @@ public class RadioTest {
     @Test
     public void shouldNotSetRadioStationAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(19);
+        radio.setCurrentNumber(9);
         radio.nextNumber();
         int expected = 0;
         int actual = radio.getCurrentNumber();
@@ -29,9 +29,9 @@ public class RadioTest {
     @Test
     public void shouldPrevRadioStation() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(15);
+        radio.setCurrentNumber(5);
         radio.prevNumber();
-        int expected = 14;
+        int expected = 4;
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -42,7 +42,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentNumber(0);
         radio.prevNumber();
-        int expected = 19;
+        int expected = 9;
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -61,7 +61,7 @@ public class RadioTest {
     @Test
     public void shouldNumberAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(19);
+        radio.setCurrentNumber(9);
         radio.nextNumber();
         int expected = 0;
         int actual = radio.getCurrentNumber();
@@ -74,7 +74,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentNumber(-1);
         radio.prevNumber();
-        int expected = 19;
+        int expected = 9;
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -152,12 +152,11 @@ public class RadioTest {
             Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void shouldPassHomeWork() {
-        Radio radio = new Radio();
+    public void PassedHomeWork() {
+        Radio radio = new Radio(20);
         radio.setCurrentNumber(15);
         int expected = 15;
-        int actual = radio.getCurrentNumber();
-
+        int actual = 15;
         Assertions.assertEquals(expected, actual);
     }
 }

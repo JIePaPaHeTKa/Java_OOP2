@@ -2,7 +2,7 @@ package ru.netology.radio;
 
 public class Radio {
     private final int firstStation = 0;
-    private final int lastStation = 19;  // Изменено с 9 на 19
+    private final int lastStation = 9;
     private final int minVolume = 0;
     private final int maxVolume = 100;
     private int currentStation;
@@ -13,7 +13,7 @@ public class Radio {
     }
 
     public Radio() {
-        this.currentStation = 20; //увеличено количество станций для проверки
+        this.currentStation = 10;
     }
 
     public Radio(int stationNumber) {
