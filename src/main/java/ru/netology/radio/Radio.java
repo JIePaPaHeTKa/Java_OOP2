@@ -7,19 +7,15 @@ public class Radio {
     private final int maxVolume = 100;
     private int currentStation;
     private int currentVolume;
-
-    public int getCurrentNumber() {
-        return currentStation;
-    }
-
     public Radio() {
         this.currentStation = 10;
     }
-
     public Radio(int stationNumber) {
         this.currentStation = stationNumber;
     }
-
+    public int getCurrentNumber() {
+        return currentStation;
+    }
     public void setCurrentNumber(int newCurrentNumber) {
         if (newCurrentNumber < firstStation) {
             return;
